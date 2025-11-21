@@ -3,7 +3,7 @@
 {
 	"name": "Dev Labs k8s",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:noble",
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
