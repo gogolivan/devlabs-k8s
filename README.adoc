@@ -1,1 +1,10 @@
 = k8s Labs
+:doctype: book
+
+include::./docs/vi.adoc[]
+
+include::./docs/ckad/index.adoc[]
+
+include::./docs/cka/index.adoc[]
+
+include::./docs/cks/index.adoc[]
