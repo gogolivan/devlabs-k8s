@@ -2,8 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/kubernetes-helm-minikube
 {
 	"name": "Dev Labs k8s",
+	
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
@@ -16,15 +19,35 @@
 			"minikube": "latest"
 		}
 	},
-	
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hashicorp.terraform",
+				"redhat.vscode-yaml",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker",
+				"asciidoctor.asciidoctor-vscode"
+			]
+		},
+		"settings": {
+			"editor.tabSize": 2,
+			// Terraform settings
+			"[terraform]": {
+				"editor.defaultFormatter": "hashicorp.terraform",
+				"editor.formatOnSave": true,
+				"editor.tabSize": 2
+			}
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "kubectl version",
+	"postCreateCommand": "post-create",
 
 	// Use 'postStartCommand' to run commands after the container is created like starting minikube.
-	// "postStartCommand": "nohup bash -c 'minikube start &' > minikube.log 2>&1",
+	"postStartCommand": "post-start",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
