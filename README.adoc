@@ -1,10 +1,22 @@
 = k8s Labs
+:toc: auto
 :doctype: book
 
-include::./docs/vi.adoc[]
+== Prerequisites
+include::./docs/pages/vi.adoc[]
 
-include::./docs/ckad/index.adoc[]
+include::./docs/pages/yaml.adoc[]
 
-include::./docs/cka/index.adoc[]
+include::./docs/parts/ckad/index.adoc[]
 
-include::./docs/cks/index.adoc[]
+include::./docs/parts/cka/index.adoc[]
+
+include::./docs/parts/cks/index.adoc[]
+
+== Tips and Tricks
+=== Exam Strategy
+- Use `kubectl explain` aggressively.
+- Use `kubectl -o yaml --dry-run=client` to generate manifests.
+
+=== Common Mistakes
+- Forgetting to set the namespace.
