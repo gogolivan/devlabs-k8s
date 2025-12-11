@@ -52,7 +52,7 @@ kubectl run nginx --image=nginx -- --help
 kubectl run nginx --image nginx --dry-run -o yaml
 ----
 
-.Generate manifest and create
+.Generate manifest and create resource
 [source,shell]
 ----
 kubectl run nginx --image=nginx --dry-run=client -o yaml | kubectl create -f -
