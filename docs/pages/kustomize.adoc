@@ -1,1 +1,8 @@
 === Kustomize
+
+==== Display
+.List resources from a directory with kustomization.yaml - e.g. kustomization.yaml
+[source,shell]
+----
+kubectl get -k .
+----

@@ -1,1 +1,81 @@
 === Pods
+
+==== Display
+.Help
+[source,shell]
+----
+kubectl get pods -h
+----
+
+.List all pods in ps output format in all namespaces
+[source,shell]
+----
+kubectl get pods -A
+----
+
+.List all pods in ps output format with more information (such as node name)
+[source,shell]
+----
+kubectl get pods -o wide
+----
+
+==== Create and run a particular image in a pod
+.Start a nginx pod
+[source,shell]
+----
+kubectl run nginx --image=nginx
+----
+
+.Start a nginx pod and let the container expose port 80
+[source,shell]
+----
+kubectl run nginx --image nginx --port 80
+----
+
+.Start a hazelcast pod and set labels "app=hazelcast" and "env=prod" in the container
+[source,shell]
+----
+kubectl run nginx --image=nginx --labels="app=nginx,env=prod"
+----
+
+.Start the nginx pod using the default command, but use custom arguments for that command
+[source,shell]
+----
+kubectl run nginx --image=nginx -- --help
+----
+
+[TIP]
+====
+.Generate manifest
+[source,shell]
+----
+kubectl run nginx --image nginx --dry-run -o yaml
+----
+
+.Generate manifest and create
+[source,shell]
+----
+kubectl run nginx --image=nginx --dry-run=client -o yaml | kubectl create -f -
+----
+====
+
+==== Describe
+.Describe a pod by name
+[source,shell]
+----
+kubectl describe pods/nginx
+#kubectl describe pod nginx
+----
+
+.Describe a pod by label
+[source,shell]
+----
+kubectl describe pods -l app=nginx
+----
+
+==== Delete
+.Delete a pod
+[source,shell]
+----
+kubectl delete pod nginx
+----

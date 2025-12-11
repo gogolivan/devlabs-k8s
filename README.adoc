@@ -15,8 +15,57 @@ include::./docs/parts/cks/index.adoc[]
 
 == Tips and Tricks
 === Exam Strategy
-- Use `kubectl explain` aggressively.
+- Use `kubectl explain` and `kubectl` **--help**.
 - Use `kubectl -o yaml --dry-run=client` to generate manifests.
 
 === Common Mistakes
 - Forgetting to set the namespace.
+
+=== Cheat Sheet
+.kubectl controls the Kubernetes cluster manager.
+[source,shell]
+----
+kubectl -h
+----
+
+.Print the supported API resources on the server
+[source,shell]
+----
+kubectl api-resources
+----
+
+.Run a particular image on the cluster
+[source,shell]
+----
+kubectl run -h
+----
+
+.Create a resource from a file or from stdin
+[source,shell]
+----
+kubectl create -h
+----
+
+.Apply a configuration to a resource by file name or stdin
+[source,shell]
+----
+kubectl apply -h
+----
+
+.Take a replication controller, service, deployment or pod and expose it as a new Kubernetes service
+[source,shell]
+----
+kubectl expose -h
+----
+
+.Get documentation for a resource
+[source,shell]
+----
+kubectl explain -h
+----
+
+.Show details of a specific resource or group of resources
+[source,shell]
+----
+kubectl describe -h
+----
